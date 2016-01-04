@@ -6,10 +6,9 @@ $(function(){
 });
 $(document).ready(function() {
     $('input[id="title"]').focus(function() {
-        $('input[id="datepicker"]').removeClass("hidden");
-        $('div[id="body"]')[0].style.display = 'block';
         $('button[id="attachment"]').removeClass("hidden");
-        $('button[id="submitButton"]').removeClass("hidden");
+        $('div[id="body"]')[0].style.display = 'block';
+        $('div[id="datepickerdiv"]').removeClass("hidden");
         if (this.value == this.defaultValue){
             this.value = '';
         }
@@ -20,10 +19,9 @@ $(document).ready(function() {
     $('input[type="text"]').blur(function() {
         if (this.value == ''){
             this.value = (this.defaultValue ? this.defaultValue : '');
-            $('input[id="datepicker"]').addClass("hidden");
-            $('div[id="body"]')[0].style.display = 'none';
             $('button[id="attachment"]').addClass("hidden");
-            $('button[id="submitButton"]').addClass("hidden");
+            $('div[id="body"]')[0].style.display = 'none';
+            $('div[id="datepickerdiv"]').addClass("hidden");
         }
     });
 });
@@ -41,7 +39,7 @@ function onFocus(){
     $('div[id="body"]').css("margin-bottom","75px");
 }
 function onBlur(){
-    $('div[id="body"]').css("margin-bottom","5px");
+    $('div[id="body"]').css("margin-bottom","10px");
     if(document.getElementById("body").innerHTML == "" || document.getElementById("test").innerHTML=='<p><br data-mce-bogus="1"></p>') {
         document.getElementById("body").innerHTML = "<p>Few words about your achievement, what it changed in your life?</p>";
     }

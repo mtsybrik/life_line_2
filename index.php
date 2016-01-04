@@ -27,9 +27,9 @@
                         <input type="file" id="fileInput" name="fileInput" />
                     </div>
                     <button id="attachment" class="hidden" type="button" onclick="chooseFile();"></button>
-                    <div>
-                        <input id="datepicker"type="text" class="hidden"  value="<? echo date('M d Y') ?>">
-                        <button id="submitButton" class="hidden" type="submit">Отправить</button>
+                    <div id="datepickerdiv" class="hidden">
+                        <input id="datepicker"type="text" value="<? echo date('M d Y') ?>">
+                        <button id="submitButton" type="submit">Отправить</button>
                     </div>
                 </div>
             </form>
