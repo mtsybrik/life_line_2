@@ -1,0 +1,363 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+html{
+	background:url('../img/page_bg.jpg') repeat #191919;
+}
+
+
+body{
+	min-height: 700px;
+    padding: 0 0 50px;
+	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+	overflow:hidden;
+}
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#54a6de;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+section, footer, header{
+	display: block;
+}
+
+
+/*----------------------------
+	Styling the timeline
+-----------------------------*/
+
+
+#timeline{
+	background:none;
+}
+
+.slider .slider-container-mask .slider-container{
+	background:none;
+}
+
+#timeline div.navigation{
+    background: url('../img/timeline_bg.jpg') repeat;
+    border-top:none;
+}
+
+/* Creating the 3D effect for the timeline navigation */
+
+#timeline div.navigation:before{
+	position:absolute;
+	content:'';
+	height:40px;
+	width:100%;
+	left:0;
+	top:-40px;
+	background: url('../img/timeline_bg.jpg') repeat;
+}
+
+#timeline div.navigation:after{
+	position:absolute;
+	content:'';
+	height:10px;
+	width:100%;
+	left:0;
+	top:-40px;
+	background:repeat-x;
+	
+	background-image: linear-gradient(bottom, #434446 0%, #363839 100%);
+	background-image: -o-linear-gradient(bottom, #434446 0%, #363839 100%);
+	background-image: -moz-linear-gradient(bottom, #434446 0%, #363839 100%);
+	background-image: -webkit-linear-gradient(bottom, #434446 0%, #363839 100%);
+	background-image: -ms-linear-gradient(bottom, #434446 0%, #363839 100%);
+}
+
+
+/* Adding a darker background to the timeline navigation */
+
+#timeline div.timenav-background{
+	background-color:#222 !important;
+ 	background-color:rgba(0,0,0,0.4) !important;
+ 	
+}
+
+#timeline .navigation .timenav-background .timenav-interval-background{
+	background:none;
+}
+
+#timeline .top-highlight{
+	background-color:transparent !important;
+}
+
+/* The zoom-in / zoom-out toolbar */
+
+#timeline .toolbar{
+	border:none !important;
+	background-color: #202222 !important;
+}
+
+#timeline .toolbar div{
+	border:none !important;
+}
+
+/* Styling the timeline numbers on the bottom */
+
+#timeline .navigation .timenav .time .time-interval-minor .minor{
+	margin-left:-1px;
+}
+
+#timeline .navigation .timenav .time .time-interval div{
+	color: #CCCCCC;
+}
+
+/* The vertical lines */
+
+#timeline .navigation .timenav .content .marker .line {
+	background: #242828;
+	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+#timeline .navigation .timenav .content .marker .dot {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-radius: 3px 3px 3px 3px;
+}
+
+/* The previous / next arrows & labels */
+
+.slider .nav-previous .icon {
+	background: url("timeline.png") no-repeat scroll 0 -293px transparent;
+}
+
+.slider .nav-previous,.slider .nav-next{
+	font-family:'Segoe UI',sans-serif;
+}
+
+.slider .nav-next .icon {
+	background: url("timeline.png") no-repeat scroll 72px -221px transparent;
+	width: 70px !important;
+}
+
+.slider .nav-next:hover .icon{
+	position:relative;
+	right:-5px;
+}
+
+.slider .nav-previous:hover, .slider .nav-next:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+#timeline .thumbnail {
+	border: medium none;
+}
+
+/* Color of the headings */
+
+#timeline h1, #timeline h2, #timeline h3, #timeline h4, #timeline h5, #timeline h6{
+	color:#ddd;
+}
+
+/* The loading screen */
+
+#timeline .feedback {
+	background-color: #222222;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2) inset;
+	border:none;
+}
+
+#timeline .feedback div{
+	color: #AAAAAA;
+	font-size: 14px !important;
+	font-weight: normal;
+}
+
+
+/*----------------------------
+	The Slides
+-----------------------------*/
+
+
+#timeline .slider-item h2,
+#timeline .slider-item h3{
+	font-family:'Antic Slab','Segoe UI',sans-serif;
+}
+
+#timeline .slider-item h2{
+	color:#fff;
+}
+
+#timeline .slider-item p{
+	font-family:'Segoe UI',sans-serif;
+}
+
+
+#timeline .slider-item img,
+#timeline .slider-item iframe{
+	border:none;
+}
+
+/* Customizing the first slide - the cover */
+
+#timeline .slider-item:nth-child(1) h2{
+	font:normal 70px/1 'Antic Slab','Segoe UI',sans-serif;
+	background:rgba(0,0,0,0.3);
+	white-space: nowrap;
+	padding:10px 5px 5px 20px;
+	position:relative;
+	right:-60px;
+	z-index:1;
+}
+
+#timeline .slider-item:nth-child(1) p i{
+	font:normal normal 40px 'Dancing Script','Segoe UI',sans-serif;
+	background:rgba(0,0,0,0.3);
+	white-space: nowrap;
+	padding:5px 20px;
+	position:relative;
+	right:-60px;
+	z-index:1;
+}
+
+#timeline .slider-item:nth-child(1) p .c1{
+	color:#1bdff0;
+}
+
+#timeline .slider-item:nth-child(1) p .c2{
+	color:#c92fe6;
+}
+
+#timeline .slider-item:nth-child(1) .media-container {
+	left: -30px;
+	position: relative;
+	z-index: 1;
+}
+
+#timeline .slider-item:nth-child(1) .credit{
+	text-align: center;
+}
+
+
+/*----------------------------
+	Back to Tzine header
+-----------------------------*/
+
+
+header{
+	width:267px;
+	height:48px;
+	position:fixed;
+	top:0;
+	left:50%;
+	margin-left: -440px;
+	z-index: 1000;
+	box-shadow: 0 0 2px #000000;
+}
+
+header a{
+	border:none !important;
+	text-indent:-9999px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:url('../img/download_on_tutorialzine.jpg') no-repeat;
+}
+
+
+/*----------------------------
+	Styling form
+-----------------------------*/
+
+.form-style-10{
+	padding: 10px;
+	width:250px;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+
+}
+/*.form-style-10 .inner-wrap{*/
+	/*padding: 30px;*/
+	/*background: #F8F8F8;*/
+	/*border-radius: 6px;*/
+	/*margin-bottom: 15px;*/
+/*}*/
+.form-style-10 textarea,input,
+.form-style-10 select, #body {
+	background: #ffffff;
+	display: block;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 8px;
+	border-radius: 6px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+	font-size: medium;
+	color: #928E91;
+	margin-bottom: 8px;
+	padding-right: 40px;
+}
+#body{
+	min-height: 76px;
+}
+#attachment{
+	background-image: url(../img/attach_photo.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	/* put the height and width of your image here */
+	height: 73px;
+	width: 40px;
+	border: none;
+	position: absolute;
+	left: 215px;
+	top: 57px;
+	z-index: 1;
+	background-color: white ;
+	cursor: pointer;
+}
+button{
+	height: 37px;
+	border-radius: 6px;
+	background-color: white;
+	font-size: medium;
+	color: #928E91;
+	padding: 5px;
+}
+#ui-datepicker-div{
+	z-index: 10 !important;
+}
+#datepicker{
+	max-width: 130px;
+	display: inline;
+	float: right;
+	padding-right: 0px;
+}
+.hidden {
+	display: none;
+	visibility: hidden;
+}
