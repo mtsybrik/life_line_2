@@ -287,7 +287,7 @@ header a{
 
 .form-style-10{
 	padding: 10px;
-	width:250px;
+	width:258px;
 	border-radius: 10px;
 	-webkit-border-radius:10px;
 	-moz-border-radius: 10px;
@@ -296,12 +296,7 @@ header a{
 	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 
 }
-/*.form-style-10 .inner-wrap{*/
-	/*padding: 30px;*/
-	/*background: #F8F8F8;*/
-	/*border-radius: 6px;*/
-	/*margin-bottom: 15px;*/
-/*}*/
+
 .form-style-10 textarea,input,
 .form-style-10 select, #body {
 	background: #ffffff;
@@ -334,28 +329,31 @@ header a{
 	width: 40px;
 	border: none;
 	position: absolute;
-	left: 215px;
+	left: 225px;
 	top: 57px;
 	z-index: 1;
 	background-color: white ;
 	cursor: pointer;
 }
 button{
-	height: 37px;
+	height: 40px;
 	border-radius: 6px;
 	background-color: white;
 	font-size: medium;
 	color: #928E91;
 	padding: 5px;
+    float: right;
 }
 #ui-datepicker-div{
 	z-index: 10 !important;
 }
 #datepicker{
-	max-width: 130px;
+	max-width: 150px;
 	display: inline;
-	float: right;
+	/*float: left;*/
 	padding-right: 0px;
+    background: white url(../img/date.png) no-repeat scroll 7px 7px;
+    padding-left: 40px;
 }
 .hidden {
 	display: none;
