@@ -18,7 +18,7 @@
     </head>
     
     <body>
-        <div class="form-style-10">
+        <div class="form-style-10" id="form">
             <form action="#">
                 <div class="inner-wrap">
                     <input id="title" type="text" name="title"  value="What makes you proud?" />
@@ -27,10 +27,8 @@
                         <input type="file" id="fileInput" name="fileInput" />
                     </div>
                     <button id="attachment" class="hidden" type="button" onclick="chooseFile();"></button>
-                    <div id="datepickerdiv" class="hidden">
-                        <input id="datepicker"type="text" value="<? echo date('M d Y') ?>">
-                        <button id="submitButton" type="submit">Отправить</button>
-                    </div>
+                    <input id="datepicker"type="text" class="hidden" value="<? echo date('M d Y') ?>">
+                    <button id="submitButton" type="submit" class="hidden">Отправить</button>
                 </div>
             </form>
         </div>

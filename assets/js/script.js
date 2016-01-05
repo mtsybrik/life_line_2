@@ -9,6 +9,8 @@ $(document).ready(function() {
         $('button[id="attachment"]').removeClass("hidden");
         $('div[id="body"]')[0].style.display = 'block';
         $('div[id="datepickerdiv"]').removeClass("hidden");
+        $('button[id="submitButton"]').removeClass("hidden");
+        $('input[id="datepicker"]').removeClass("hidden");
         if (this.value == this.defaultValue){
             this.value = '';
         }
@@ -16,14 +18,24 @@ $(document).ready(function() {
             this.select();
         }
     });
-    $('input[type="text"]').blur(function() {
-        if (this.value == ''){
-            this.value = (this.defaultValue ? this.defaultValue : '');
-            $('button[id="attachment"]').addClass("hidden");
-            $('div[id="body"]')[0].style.display = 'none';
-            $('div[id="datepickerdiv"]').addClass("hidden");
+});
+$(document).mouseup(function (e)
+{
+    var container = $("#form");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        var item = document.getElementById("title");
+        if (item.value == ''){
+                item.value = item.defaultValue ? item.defaultValue : '';
+                $('button[id="attachment"]').addClass("hidden");
+                $('div[id="body"]')[0].style.display = 'none';
+                $('div[id="datepickerdiv"]').addClass("hidden");
+                $('button[id="submitButton"]').addClass("hidden");
+                $('input[id="datepicker"]').addClass("hidden");
+            }
         }
-    });
 });
 tinymce.init({
     selector: '#body',
@@ -49,6 +61,6 @@ function chooseFile() {
 }
 $(function() {
     $( "#datepicker" ).datepicker({
-        dateFormat: "d M yy"
+        dateFormat: "M dd yy"
     });
 });
