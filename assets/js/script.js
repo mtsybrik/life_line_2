@@ -1,9 +1,22 @@
-$(function(){
-	
-	var timeline = new VMM.Timeline();
-	timeline.init("data.json");
-
-});
+$(document).ready(function() {
+    var timeline_json;
+    var additionalOptions = {
+        start_at_end: true,
+        default_bg_color: {r:36, g:36, b:36},
+        timenav_height: 200
+    }
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        data: {"test": "worked"},
+        url: 'assets/php/json.php',
+        async: false,
+        success: function (data) {
+            timeline_json = data;
+        }
+    });
+    window.timeline = new TL.Timeline('timeline', timeline_json, additionalOptions);
+    });
 $(document).ready(function() {
     $('input[id="title"]').focus(function() {
         $('button[id="attachment"]').removeClass("hidden");
@@ -64,3 +77,5 @@ $(function() {
         dateFormat: "M dd yy"
     });
 });
+
+

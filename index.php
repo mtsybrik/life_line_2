@@ -5,6 +5,7 @@
         <title>Life Line</title>
         <!-- The default timeline stylesheet -->
         <link rel="stylesheet" href="assets/css/timeline.css" />
+        <link title="timeline-styles" rel="stylesheet" href="//cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
         <!-- Our customizations to the theme -->
         <link rel="stylesheet" href="assets/css/styles.css" />
         
@@ -40,7 +41,10 @@
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src='assets/js/tinymce/tinymce.min.js'></script>
-		<script src="assets/js/script.js"></script>
-        <script src="assets/js/timeline-min.js"></script>
+        <script src="//cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+        <script src="assets/js/script.js"></script>
+<!--        <script src="assets/js/timeline-min.js"></script>-->
+<!--    <script src="assets/js/VMM.Timeline.js"></script>-->
+
     </body>
 </html>

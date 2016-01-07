@@ -2,10 +2,10 @@
 {
     "timeline":
     {
-        "headline":"Johnny B Goode",
         "type":"default",
-		"startDate":"2009,1",
-		"text":"<i><span class='c1'>Designer</span> & <span class='c2'>Developer</span></i>",
+        "startDate":"2009,1",
+        "headline":"Johnny B Goode",
+        "text":"<i><span class='c1'>Designer</span> & <span class='c2'>Developer</span></i>",
 		"asset":
         {
             "media":"assets/img/notes.png",
