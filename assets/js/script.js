@@ -1,9 +1,8 @@
 $(document).ready(function() {
     var timeline_json;
     var additionalOptions = {
-        start_at_end: true,
         default_bg_color: {r:36, g:36, b:36},
-        timenav_height: 200
+        //timenav_height: 200
     }
     $.ajax({
         type: "POST",

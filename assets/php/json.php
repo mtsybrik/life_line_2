@@ -4,34 +4,82 @@ $test = $_POST['test'];
 $timeline= array(
                 "title"=> array(
                     "media"=> array(
-                        "url"=> "//www.flickr.com/photos/tm_10001/2310475988/",
-                        "caption"=> "Whitney Houston performing on her My Love is Your Love Tour in Hamburg.",
-                        "credit"=> "flickr/<a href='http://www.flickr.com/photos/tm_10001/'>tm_10001</a>"
+                        "url"=> "assets/img/notes.png",
+                        "caption"=> "",
+                        "credit"=> "<a href='http://dribbble.com/shots/221641-iOS-Icon'>iOS Icon by Asher</a>"
                     ),
                     "text"=> array(
-                        "headline"=> "Whitney Houston<br/> 1963 - 2012",
-                        "text"=> "<p>Houston's voice caught the imagination of the world propelling her to superstardom at an early age becoming one of the most awarded performers of our time. This is a look into the amazing heights she achieved and her personal struggles with substance abuse and a tumultuous marriage.</p>"
+                        "headline"=> "Johnny B Goode",
+                        "text"=> "<i><span class='c1'>Designer</span> & <span class='c2'>Developer</span></i>"
                     )
                 ),
                 "events"=> array(
                     array(
                         "media"=> array(
-                              "url"=> "{{ static_url }}/img/examples/houston/family.jpg",
-                              "caption"=> "Houston's mother and Gospel singer, Cissy Houston (left) and cousin Dionne Warwick.",
-                              "credit"=> "Cissy Houston photo:<a href='http://www.flickr.com/photos/11447043@N00/418180903/'>Tom Marcello</a><br/><a href='http://commons.wikimedia.org/wiki/File%3ADionne_Warwick_television_special_1969.JPG'>Dionne Warwick: CBS Television via Wikimedia Commons</a>"
+                              "url"=> "http://vimeo.com/22439234",
+                              "caption"=> "",
+                              "credit"=> ""
                         ),
                         "start_date"=> array(
-                              "month"=> "8",
-                              "day"=> "9",
-                              "year"=> "1963"
+                              "month"=> "2",
+                              "day"=> "",
+                              "year"=> "2009"
                         ),
                         "text"=> array(
-                              "headline"=> "A Musical Heritage",
-                              "text"=> "<p>Born in New Jersey on August 9th, 1963, Houston grew up surrounded by the music business. Her mother is gospel singer Cissy Houston and her cousins are Dee Dee and Dionne Warwick.</p>"
+                              "headline"=> "My first experiment in time-lapse photography",
+                              "text"=> "Nature at its finest in this video."
+                        )
+                    ),
+                    array(
+                        "media"=> array(
+                              "url"=> "http://vimeo.com/22439234",
+                              "caption"=> "",
+                              "credit"=> ""
+                        ),
+                        "start_date"=> array(
+                              "month"=> "3",
+                              "day"=> "",
+                              "year"=> "2013"
+                        ),
+                        "text"=> array(
+                              "headline"=> "My first experiment in time-lapse photography",
+                              "text"=> "Nature at its finest in this video."
+                        )
+                    ),
+                    array(
+                        "media"=> array(
+                              "url"=> "http://vimeo.com/22439234",
+                              "caption"=> "",
+                              "credit"=> ""
+                        ),
+                        "start_date"=> array(
+                              "month"=> "4",
+                              "day"=> "",
+                              "year"=> "2014"
+                        ),
+                        "text"=> array(
+                              "headline"=> "My first experiment in time-lapse photography",
+                              "text"=> "Nature at its finest in this video."
+                        )
+                    ),
+                    array(
+                        "media"=> array(
+                              "url"=> "http://vimeo.com/22439234",
+                              "caption"=> "",
+                              "credit"=> ""
+                        ),
+                        "start_date"=> array(
+                              "month"=> "5",
+                              "day"=> "",
+                              "year"=> "2015"
+                        ),
+                        "text"=> array(
+                              "headline"=> "My first experiment in time-lapse photography",
+                              "text"=> "Nature at its finest in this video."
                         )
                     )
                 )
-);
+            );
 
 echo json_encode($timeline);
 ?>

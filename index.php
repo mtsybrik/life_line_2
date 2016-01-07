@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>Life Line</title>
         <!-- The default timeline stylesheet -->
-        <link rel="stylesheet" href="assets/css/timeline.css" />
+<!--        <link rel="stylesheet" href="assets/css/timeline.css" />-->
         <link title="timeline-styles" rel="stylesheet" href="//cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
         <!-- Our customizations to the theme -->
         <link rel="stylesheet" href="assets/css/styles.css" />
