@@ -1,18 +1,9 @@
 <?php
+require "functions.php";
 $test = $_POST['test'];
 
 $timeline= array(
-                "title"=> array(
-                    "media"=> array(
-                        "url"=> "assets/img/notes.png",
-                        "caption"=> "",
-                        "credit"=> "<a href='http://dribbble.com/shots/221641-iOS-Icon'>iOS Icon by Asher</a>"
-                    ),
-                    "text"=> array(
-                        "headline"=> "Johnny B Goode",
-                        "text"=> "<i><span class='c1'>Designer</span> & <span class='c2'>Developer</span></i>"
-                    )
-                ),
+                "title"=> $title,
                 "events"=> array(
                     array(
                         "media"=> array(

@@ -1,3 +1,11 @@
+<?
+require 'assets/php/functions.php';
+
+if(empty($_SESSION['login_user'])){
+    header("Location: login.php");
+    exit;}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
