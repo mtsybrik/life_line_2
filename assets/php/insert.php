@@ -1,7 +1,7 @@
 <?php
 
 //Variable declaration
-$userinfo = $userid = $uploadurl= $month = $day = $year ='';
+$userinfo = $userid = $uploadurl= $month = $day = $year = $headline = $text = $start_date = '';
 
 session_start(); // Starting Session
 if(empty($_SESSION['login_user'])){
@@ -10,7 +10,10 @@ if(empty($_SESSION['login_user'])){
 require('connect.php');
 //Receive title & text & date
 $headline = $_POST['title'];
+$headline = $mysqli->real_escape_string($headline);
 $text = $_POST['body'];
+$text = $mysqli->real_escape_string($text);
+
 $start_date = $_POST['start_date'];
 
 if($start_date){
@@ -39,6 +42,8 @@ if (isset($_FILES["file"]["name"]) && $_FILES["file"]["name"] != ''){
     $uploadurl = $uploaddir . basename($_FILES["file"]["name"]);
     move_uploaded_file($_FILES["file"]["tmp_name"], $uploadfile);
 //    echo "File is valid, and was successfully uploaded.";
+    $uploadurl = $mysqli->real_escape_string($uploadurl);
+
 }
 
 $mysqli->query("INSERT INTO events(url, month, day, year, headline, text, userid)  VALUES ('$uploadurl', '$month', '$day', '$year', '$headline', '$text', '$userid')");

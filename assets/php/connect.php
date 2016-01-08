@@ -3,8 +3,8 @@ $mysqli = mysqli_init();
 if (!$mysqli) {
     die('mysqli_init failed');
 }
-//$env='';
-$env ='production';
+$env='';
+//$env ='production';
 if($env=='production') {
     $user = 'nevaczsj_root';
     $password = "P@ssword";
