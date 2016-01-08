@@ -10,7 +10,7 @@ require('connect.php');
 $username = $_SESSION['login_user'];
 
 //Variable declaration
-$userinfo = $userinfo = $user_lastname= $user_status = $loan_type= $loan_amount = $userid= '';
+$userinfo = $userid = '';
 
 // DB query to get userid by username
 if($userinfo = $mysqli->query("SELECT * FROM user WHERE username = '$username'"))  //Выборка данных пользователя для дальнейшего использования
@@ -29,16 +29,72 @@ if($result = $mysqli->query("SELECT * FROM title WHERE userid = '$userid'"))  //
         $media["url"] = $row["url"];
         $media["caption"] = $row["caption"];
         $media["credit"] = $row["credit"];
-    // Saving array of media to title object
+
+        //Convert null value to empty string
+        array_walk($media,function(&$item){$item=strval($item);});
+
+        // Saving array of media to title object
         $title["media"] = $media;
 
         $text["headline"] = $row["headline"];
         $text["text"] = $row["text"];
+
+        //Convert null value to empty string
+        array_walk($text,function(&$item){$item=strval($item);});
+
     // Saving array of text to title object
         $title["text"] = $text;
+
         /* free result set */
         $result->free();
     };
+$events_item = array();
+$events = array();
+$start_date = array();
+if($result = $mysqli->query("SELECT * FROM events WHERE userid = '$userid'"))  //Выборка данных пользователя для дальнейшего использования
+{
+    while($row = $result->fetch_assoc())
+        {
+            //Parcing media array
+            $media["url"] = $row["url"];
+            $media["caption"] = $row["caption"];
+            $media["credit"] = $row["credit"];
+
+            //Convert null value to empty string
+            array_walk($media,function(&$item){$item=strval($item);});
+
+            // Saving array of media to title object
+            $events_item["media"] = $media;
+
+            //Parcing text array
+            $text["headline"] = $row["headline"];
+            $text["text"] = $row["text"];
+
+            //Convert null value to empty string
+            array_walk($text,function(&$item){$item=strval($item);});
+
+            // Saving array of text to title object
+            $events_item["text"] = $text;
+
+            //Parcing start_date array
+            $start_date["month"] = $row["month"];
+            $start_date["day"] = $row["day"];
+            $start_date["year"] = $row["year"];
+
+            //Convert null value to empty string
+            array_walk($start_date,function(&$item){$item=strval($item);});
+
+            // Saving array of text to title object
+            $events_item["start_date"] = $start_date;
+
+            $events[] = $events_item;
+        }
+
+    /* free result set */
+    $result->free();
+}
+
+//print_r(json_encode($events));
 
 // Closing Connection
 $mysqli->close();

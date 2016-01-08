@@ -28,15 +28,15 @@ if(empty($_SESSION['login_user'])){
     
     <body>
         <div class="form-style-10" id="form">
-            <form action="#">
+            <form action="assets/php/insert.php">
                 <div class="inner-wrap">
                     <input id="title" type="text" name="title"  value="What makes you proud?" />
                     <div id="body" onfocus="onFocus()" onblur="onBlur()" style="display: none"><p>Few words about your achievement, what it changed in your life?</p></div>
                     <div style="height:0px;overflow:hidden;">
-                        <input type="file" id="fileInput" name="fileInput" />
+                        <input type="file" id="fileInput" name="file" />
                     </div>
                     <button id="attachment" class="hidden" type="button" onclick="chooseFile();"></button>
-                    <input id="datepicker"type="text" class="hidden" value="<? echo date('M d Y') ?>">
+                    <input id="datepicker" name="start_date" type="text" class="hidden" value="<? echo date('M d Y') ?>">
                     <button id="submitButton" type="submit" class="hidden">Отправить</button>
                 </div>
             </form>
