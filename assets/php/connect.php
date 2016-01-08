@@ -3,12 +3,12 @@ $mysqli = mysqli_init();
 if (!$mysqli) {
     die('mysqli_init failed');
 }
-$env='';
-//$env ='production';
+//$env='';
+$env ='production';
 if($env=='production') {
-    $user = 'gennurys_root';
+    $user = 'nevaczsj_root';
     $password = "P@ssword";
-    $db = 'gennurys_Life_line_2';
+    $db = 'nevaczsj_life_line';
     $host = 'localhost';
     $port = 3306;
 }
