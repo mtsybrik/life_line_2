@@ -1,24 +1,3 @@
-function div2form(id){
-    var form=document.getElementById(id);
-    if(!form){
-        return;
-    }
-    var divs=document.getElementsByName(id+'div')
-    var i, ndivs=divs.length;
-    for(i=0;i<ndivs;i++){
-        if(document.getElementById('textarea'+divs[i].id)){
-            document.getElementById('textarea'+divs[i].id).value=divs[i].innerHTML;
-        } else {
-            var texta=document.createElement('TEXTAREA');
-            texta.name=divs[i].id;
-            texta.id='textarea'+divs[i].id;
-            texta.value=divs[i].innerHTML;
-            texta.style.display='none';
-            form.appendChild(texta);
-        }
-    }
-}
-
 $(document).ready(function() {
     var timeline_json;
     var additionalOptions = {
@@ -98,4 +77,21 @@ $(function() {
     });
 });
 
+$(function(){
+    $('#submitButton').click(function () {
+        var mysave = $('#body').html();
+        $('#hiddeninput').val(mysave);
+    });
+});
+//
+//$(document).ready(function(){
+//    var form = $('form');
+//    form.submit(function(){
+//        $.post($(this).attr('action'), $(this).serialize(), function(response){
+//            alert("Your achievement successfully added to your timeline");
+//            window.location.reload();
+//        },'json');
+//        return false;
+//    });
+//});
 
