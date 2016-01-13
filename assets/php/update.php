@@ -1,5 +1,15 @@
 <?php
 
+
+$eventid = $_POST['eventid'];
+$eventid = preg_replace('/\D/', '', $eventid); // Get digit out of hash
+$eventid += 1;
+
+
+
+
+$eventid = $username .'-'. $eventid;
+
 ////Selecting event_id by headline and date parameters
 //if($event_item_select = $mysqli->query("SELECT eventid FROM events WHERE url = '$uploadurl' AND year = '$year' AND month = '$month' AND day = '$day'"))
 //{

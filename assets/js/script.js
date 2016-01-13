@@ -2,6 +2,9 @@ $(document).ready(function() {
     var timeline_json;
     var additionalOptions = {
         default_bg_color: {r:36, g:36, b:36},
+        hash_bookmark:true,
+        height:"100%",
+        width:"100%",
         //timenav_height: 200
     }
     $.ajax({
@@ -81,17 +84,9 @@ $(function(){
     $('#submitButton').click(function () {
         var mysave = $('#body').html();
         $('#hiddeninput').val(mysave);
+        var eventid = $(location).attr('hash');
+        $('#eventid').val(eventid);
+
     });
 });
-//
-//$(document).ready(function(){
-//    var form = $('form');
-//    form.submit(function(){
-//        $.post($(this).attr('action'), $(this).serialize(), function(response){
-//            alert("Your achievement successfully added to your timeline");
-//            window.location.reload();
-//        },'json');
-//        return false;
-//    });
-//});
 

@@ -49,7 +49,7 @@ if($result = $mysqli->query("SELECT * FROM title WHERE userid = '$userid'"))  //
         $result->free();
     };
 $events_item = array();
-$events = array();
+$events = $event_id = array();
 $start_date = array();
 if($result = $mysqli->query("SELECT * FROM events WHERE userid = '$userid'"))  //Выборка данных пользователя для дальнейшего использования
 {
@@ -87,14 +87,25 @@ if($result = $mysqli->query("SELECT * FROM events WHERE userid = '$userid'"))  /
             // Saving array of text to title object
             $events_item["start_date"] = $start_date;
 
+            $event_id = $row["event_user_id"];
+            $event_id = $username .'-'. $event_id;
+
+            // Saving array of text to title object
+            $events_item["unique_id"] = $event_id;
+
             $events[] = $events_item;
         }
 
     /* free result set */
     $result->free();
 }
-
-//print_r(json_encode($events));
+//
+//$timeline= array(
+//    "title"=> $title,
+//    "events"=> $events
+//);
+//print_r (json_encode($timeline));
+//
 
 // Closing Connection
 $mysqli->close();
