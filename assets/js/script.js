@@ -4,13 +4,12 @@ $(document).ready(function() {
         default_bg_color: {r:36, g:36, b:36},
         hash_bookmark:true,
         height:"100%",
-        width:"100%",
+        width:"100%"
         //timenav_height: 200
-    }
+    };
     $.ajax({
         type: "POST",
         dataType: "json",
-        data: {"test": "worked"},
         url: 'assets/php/json.php',
         async: false,
         success: function (data) {
@@ -32,6 +31,9 @@ $(document).ready(function() {
         if(this.value != this.defaultValue){
             this.select();
         }
+        $('#form').removeClass("form-style-10");
+        $('#form').addClass("form-edit");
+        $('#timeline').css("visibility","hidden");
     });
 });
 $(document).mouseup(function (e)
@@ -50,6 +52,9 @@ $(document).mouseup(function (e)
                 $('button[id="submitButton"]').addClass("hidden");
                 $('input[id="datepicker"]').addClass("hidden");
             }
+        $('#form').addClass("form-style-10");
+        $('#form').removeClass("form-edit");
+        $('#timeline').css("visibility","visible");
         }
 });
 tinymce.init({
@@ -64,6 +69,7 @@ function onFocus(){
         document.getElementById("body").innerHTML= "";
     }
     $('div[id="body"]').css("margin-bottom","75px");
+
 }
 function onBlur(){
     $('div[id="body"]').css("margin-bottom","10px");
@@ -84,9 +90,25 @@ $(function(){
     $('#submitButton').click(function () {
         var mysave = $('#body').html();
         $('#hiddeninput').val(mysave);
-        var eventid = $(location).attr('hash');
-        $('#eventid').val(eventid);
-
+        alert("Achievement Added To Your Life Line Successfully...");
     });
 });
 
+$(function(){
+    $('#edit').click(function () {
+        var contentPop;
+        var eventid = $(location).attr('hash');
+        $('#popup').removeClass("hidden");
+        $('#popup').bPopup({
+            contentContainer:'#popup',
+            loadData:{"eventid": eventid},
+            loadUrl: 'assets/php/update.php' //Uses jQuery.load()
+        })
+    });
+});
+
+function updateButton(){
+        var mysave = $('#body').html();
+        $('#hiddeninput').val(mysave);
+        var eventid = $(location).attr('hash');
+};

@@ -1,11 +1,10 @@
 <?php
+session_start(); // Starting Session
 require "functions.php";
-$test = $_POST['test'];
+// SQL query to fetch information of registerd users and finds user match.
+$username = $_SESSION['login_user'];
 
-$timeline= array(
-                "title"=> $title,
-                "events"=> $events
-            );
+$timeline = selectTimelineByUsername($username);
 echo json_encode($timeline);
 
 ?>

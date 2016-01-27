@@ -1,19 +1,19 @@
 <?php
 
 //Variable declaration
-$userinfo = $userid = $uploadurl= $month = $day = $year = $headline = $text = $start_date = $unique_id ='';
-$evenid = array();
+$userinfo = $userid = $uploadurl= $month = $day = $year = $headline = $text = $start_date = $unique_id = $eventid = '';
+$evenid = '';
 
 
 session_start(); // Starting Session
-if(empty($_SESSION['login_user'])){
-    header("Location: login.php");
-    exit;}
 require('connect.php');
 //Receive title & text & date
 $headline = $_POST['title'];
 $headline = $mysqli->real_escape_string($headline);
 $text = $_POST['body'];
+if(isset($_POST['eventid'])){
+    $eventid = $_POST['eventid'];
+}
 
 $text = $mysqli->real_escape_string($text);
 
@@ -55,7 +55,7 @@ if($userinfo = $mysqli->query("SELECT * FROM events WHERE userid = '$userid'")) 
     }
     asort($evenid);
     $unique_id = array_pop($evenid);
-    $unique_id += 1;
+    if(!$eventid){$unique_id += 1;}
 }
 
 $query = "INSERT INTO events(url, month, day, year, headline, text, userid, event_user_id)  VALUES ('$uploadurl', '$month', '$day', '$year', '$headline', '$text', '$userid', '$unique_id')";
@@ -63,4 +63,5 @@ $mysqli->query($query);
 
 // Closing Connection
 $mysqli->close();
+
 header("Location: ../../index.php");

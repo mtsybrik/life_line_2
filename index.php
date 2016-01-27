@@ -1,4 +1,5 @@
 <?
+session_start(); // Starting Session
 require 'assets/php/functions.php';
 
 if(empty($_SESSION['login_user'])){
@@ -24,26 +25,28 @@ if(empty($_SESSION['login_user'])){
         <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+
+
     </head>
     
     <body>
         <div class="form-style-10" id="form">
             <form action="assets/php/insert.php" method="POST" enctype="multipart/form-data">
                 <div class="inner-wrap">
-                    <input id="title" type="text" name="title"  value="What makes you proud?" />
+                    <input id="title" type="text" name="title"  value="What are you proud of?" />
                     <div id="body" onfocus="onFocus()" onblur="onBlur()" style="display: none"><p>Few words about your achievement, what it changed in your life?</p></div>
                     <div class="hidden">
                         <input type="file" id="fileInput" name="file" />
                         <textarea id="hiddeninput" name="body"></textarea>
-                        <textarea id="eventid" name="eventid" class="hidden"></textarea>
                     </div>
+                    <div id="popup" class="hidden"></div>
                     <button id="attachment" class="hidden" type="button" onclick="chooseFile();"></button>
                     <input id="datepicker" name="start_date" type="text" class="hidden" value="<? echo date('M d Y') ?>">
                     <button id="submitButton" type="submit" class="hidden">Отправить</button>
                 </div>
             </form>
         </div>
-        <div><button style="display: inline">Edit</button></div>
+        <div><button id="edit" style="display: inline">Edit</button></div>
         <div id="timeline">
 			<!-- Timeline.js will genereate the markup here -->
 		</div>
@@ -51,6 +54,7 @@ if(empty($_SESSION['login_user'])){
         <!-- JavaScript includes - jQuery, turn.js and our own script.js -->
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="assets/js/jquery.bpopup.min.js"></script>
         <script src='assets/js/tinymce/tinymce.min.js'></script>
         <script src="//cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
         <script src="assets/js/script.js"></script>
