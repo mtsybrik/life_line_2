@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5cdcd23-6914-4247-be08-59f61f44d88a" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/php/delete.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/php/functions.php" afterPath="$PROJECT_DIR$/assets/php/functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
@@ -10,6 +11,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/styles.css" afterPath="$PROJECT_DIR$/assets/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/php/update.php" afterPath="$PROJECT_DIR$/assets/php/update.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/php/connect.php" afterPath="$PROJECT_DIR$/assets/php/connect.php" />
+>>>>>>> master
     </list>
     <ignored path="timeline-portfolio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,16 +63,25 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-12.518518">
               <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+=======
+      <file leaf-file-name="connect.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/php/connect.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.21634616">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+>>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,6 +89,18 @@
               <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+      <file leaf-file-name="insert.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/php/insert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.166666">
+              <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
+              <folding>
+                <marker date="1452282404000" expanded="true" signature="833:880" placeholder="SELECT * FRO..user..." />
+                <marker date="1452282404000" expanded="true" signature="1542:1679" placeholder="INSERT INTO ..." />
+                <marker date="1452282404000" expanded="true" signature="1542:1681" placeholder="INSERT INTO ..." />
+                <marker date="1452282404000" expanded="true" signature="1542:1690" placeholder="INSERT INTO ..." />
+>>>>>>> master
               </folding>
             </state>
           </provider>
@@ -126,7 +151,14 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/data.json" />
         <option value="$PROJECT_DIR$/login.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/assets/php/connect.php" />
+=======
+        <option value="$PROJECT_DIR$/assets/php/json.php" />
+        <option value="$PROJECT_DIR$/assets/php/functions.php" />
+        <option value="$PROJECT_DIR$/assets/js/script.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+>>>>>>> master
         <option value="/Applications/MAMP/bin/mamp/index.php" />
         <option value="$PROJECT_DIR$/assets/php/json.php" />
         <option value="$PROJECT_DIR$/Dummy.html" />
@@ -136,9 +168,13 @@
         <option value="$PROJECT_DIR$/assets/php/delete.php" />
         <option value="$PROJECT_DIR$/assets/php/update.php" />
         <option value="$PROJECT_DIR$/assets/php/insert.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/assets/js/script.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/assets/css/styles.css" />
+=======
+        <option value="$PROJECT_DIR$/assets/php/connect.php" />
+>>>>>>> master
       </list>
     </option>
   </component>
@@ -700,6 +736,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/assets/php/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5294118">
@@ -716,6 +753,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/php/update.php">
+=======
+    <entry file="file:///Applications/MAMP/bin/mamp/phpmyadmin.php">
+>>>>>>> master
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
@@ -749,18 +789,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-5.5882354">
           <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+        <state vertical-scroll-proportion="-22.166666">
+          <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
+          <folding>
+            <marker date="1452282404000" expanded="true" signature="833:880" placeholder="SELECT * FRO..user..." />
+            <marker date="1452282404000" expanded="true" signature="1542:1679" placeholder="INSERT INTO ..." />
+            <marker date="1452282404000" expanded="true" signature="1542:1681" placeholder="INSERT INTO ..." />
+            <marker date="1452282404000" expanded="true" signature="1542:1690" placeholder="INSERT INTO ..." />
+>>>>>>> master
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/assets/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.150121">
           <caret line="22" column="4" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="4" />
+=======
+    <entry file="file://$PROJECT_DIR$/assets/php/connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21634616">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
