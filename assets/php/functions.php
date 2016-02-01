@@ -1,5 +1,4 @@
 <?php
-
 function selectTimelineByUsername($username)
 {
     require('connect.php');
@@ -110,9 +109,8 @@ function selectTimelineByUsername($username)
     $mysqli->close();
     return $timeline;
 }
-function eventUpdateInfo($username)
+function eventUpdateInfo($username,$eventid)
 {
-    $eventid = '';
     require('connect.php');
 
     //Variable declaration
@@ -124,30 +122,54 @@ function eventUpdateInfo($username)
         $userinfo = $userinfo->fetch_assoc();
         $userid = $userinfo["userid"];// ID of the user that we will use to query all other data
     }
-    $eventid = $_POST['eventid'];
     $eventid = preg_replace('/\D/', '', $eventid); // Get digit out of hash
     $form = array();
-    if ($result = $mysqli->query("SELECT * FROM events WHERE userid = '$userid' AND event_user_id = '$eventid'"))  //Выборка данных пользователя для дальнейшего использования
-    {
+    if ($eventid!="")
+    {$result = $mysqli->query("SELECT * FROM events WHERE userid = '$userid' AND event_user_id = '$eventid'");  //Выборка данных пользователя для дальнейшего использования
         $row = $result->fetch_assoc();
-
         $form["title"] = $row["headline"];
         $form["text"] = $row["text"];
         $form["url"] = $row["url"];
 
         //Parcing start_date array
-        $form["month"] = $row["month"];
-        $form["day"] = $row["day"];
-        $form["year"] = $row["year"];
+        if($start_date["month"] = $row["month"]) {
+            $dateObj = DateTime::createFromFormat('!m', $start_date["month"]);
+            $start_date["month"] = $dateObj->format('M'); // Month will be displayed with 3 characters
+            $start_date["day"] = $row["day"];
+            $start_date["year"] = $row["year"];
 
+            //Convert null value to empty string
+            array_walk($start_date, function (&$item) {
+                $item = strval($item);
+            });
+
+            // Saving array of text to title object
+            $form["start_date"] = $start_date;
+        }
         $result->free();
     }
+    else{
+        $result = $mysqli->query("SELECT * FROM title WHERE userid = '$userid'");   //Выборка данных пользователя для дальнейшего использования
+        $row = $result->fetch_assoc();
+        $form["url"] = $row["url"];
+
+        // $media["credit"] = $row["credit"]; - TODO create credit field on form
+        //                                      TODO Hide datepicker in case of title edit mode
+
+        $form["title"] = $row["headline"];
+        $form["text"] = $row["text"];
+
+        //Convert null value to empty string
+        array_walk($form, function (&$item) {
+            $item = strval($item);
+        });
+
+        /* free result set */
+        $result->free();
+        }
     $mysqli->close();
     return $form;
 }
 //print_r (json_encode($timeline));
-//
-
-// Closing Connection
 
 ?>

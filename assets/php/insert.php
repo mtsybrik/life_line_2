@@ -11,12 +11,9 @@ require('connect.php');
 $headline = $_POST['title'];
 $headline = $mysqli->real_escape_string($headline);
 $text = $_POST['body'];
-if(isset($_POST['eventid'])){
-    $eventid = $_POST['eventid'];
-}
+$eventid = $_POST['eventid'];
 
 $text = $mysqli->real_escape_string($text);
-
 $start_date = $_POST['start_date'];
 
 if($start_date){
@@ -46,6 +43,9 @@ if (isset($_FILES["file"]["name"]) && $_FILES["file"]["name"] != ''){
     $uploadurl = $mysqli->real_escape_string($uploadurl);
 
 }
+else{
+    $uploadurl = $_POST["url"];
+}
 
 // DB query to get last eventid by username
 if($userinfo = $mysqli->query("SELECT * FROM events WHERE userid = '$userid'"))  //Выборка данных пользователя для дальнейшего использования
@@ -55,12 +55,25 @@ if($userinfo = $mysqli->query("SELECT * FROM events WHERE userid = '$userid'")) 
     }
     asort($evenid);
     $unique_id = array_pop($evenid);
-    if(!$eventid){$unique_id += 1;}
-}
-
-$query = "INSERT INTO events(url, month, day, year, headline, text, userid, event_user_id)  VALUES ('$uploadurl', '$month', '$day', '$year', '$headline', '$text', '$userid', '$unique_id')";
-$mysqli->query($query);
-
+    if($eventid == ""){
+        $unique_id += 1;
+        $query = "INSERT INTO events(url, month, day, year, headline, text, userid, event_user_id)  VALUES ('$uploadurl', '$month', '$day', '$year', '$headline', '$text', '$userid', '$unique_id')";
+        $mysqli->query($query);
+    }
+    else {
+        $eventid = preg_replace('/\D/', '', $eventid); // Get digit out of hash
+        if ($eventid != "") {
+            $unique_id = $eventid;
+            $query = "UPDATE events SET url='$uploadurl', month='$month', day='$day', year='$year', headline='$headline', text='$text', userid='$userid' WHERE event_user_id='$unique_id'";
+            $mysqli->query($query);
+        }
+        else{
+            $query = "UPDATE title SET url='$uploadurl', headline='$headline', text='$text' WHERE userid='$userid'";
+            $mysqli->query($query);
+            }
+        }
+    }
+unset($_POST["eventid"]);
 // Closing Connection
 $mysqli->close();
 
